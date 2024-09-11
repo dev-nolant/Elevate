@@ -90,7 +90,17 @@ export default function Login() {
     );
 }
 
-function getFriendlyErrorMessage(code: any): import("react").SetStateAction<string> {
-    throw new Error('Function not implemented.');
+function getFriendlyErrorMessage(code: string): string {
+    switch (code) {
+        case 'auth/invalid-email':
+            return 'Invalid email address.';
+        case 'auth/user-disabled':
+            return 'User account is disabled.';
+        case 'auth/user-not-found':
+            return 'No user found with this email.';
+        case 'auth/wrong-password':
+            return 'Incorrect password.';
+        default:
+            return 'An unexpected error occurred. Please try again.';
+    }
 }
-
