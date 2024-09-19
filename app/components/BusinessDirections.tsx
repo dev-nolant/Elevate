@@ -14,7 +14,6 @@ export default function BusinessDirections() {
 
   // Preload all icons to prevent rendering issues on mobile
   useEffect(() => {
-    // This ensures that icons are fully loaded before rendering
     const loadIcons = () => {
       setIconsReady(true);
     };
@@ -57,14 +56,17 @@ export default function BusinessDirections() {
             <h2 className="text-4xl font-bold text-black text-center">What is Your Business Needing?</h2>
             <h2 className="text-1xl font-bold text-black text-center mt-4">Software For:</h2>
             <div className="mt-6 grid grid-cols-2 gap-4 w-full">
-              {services.slice(0, 4).map((service) => (
-                <Link href={service.link} key={service.name} className="group">
-                  <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
-                    <service.icon className="w-6 h-6 text-black mr-3" />
-                    <span className="font-medium text-gray-700">{service.name}</span>
-                  </div>
-                </Link>
-              ))}
+              {services.slice(0, 4).map((service) => {
+                const Icon = service.icon;
+                return (
+                  <Link href={service.link} key={service.name} className="group">
+                    <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
+                      <Icon className="w-8 h-8 text-black mr-3" /> {/* Increased icon size */}
+                      <span className="font-medium text-gray-700">{service.name}</span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
             <div className="mt-6 text-center">
               <button onClick={toggleModal} className="px-8 py-4 bg-black text-white rounded-md">More</button>
@@ -81,19 +83,22 @@ export default function BusinessDirections() {
                 <button onClick={toggleModal} className="text-black text-lg">&times;</button>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {services.map((service) => (
-                  <Link href={service.link} key={service.name} className="group">
-                    <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
-                      <service.icon className="w-6 h-6 text-black mr-3" />
-                      <span className="font-medium text-gray-700">{service.name}</span>
-                    </div>
-                  </Link>
-                ))}
+                {services.map((service) => {
+                  const Icon = service.icon;
+                  return (
+                    <Link href={service.link} key={service.name} className="group">
+                      <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
+                        <Icon className="w-8 h-8 text-black mr-3" /> {/* Consistent icon size */}
+                        <span className="font-medium text-gray-700">{service.name}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
               <div className="mt-6 flex justify-center">
                 <Link href={ecommerceService.link} className="group">
                   <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
-                    <ecommerceService.icon className="w-6 h-6 text-black mr-3" />
+                    <ecommerceService.icon className="w-8 h-8 text-black mr-3" /> {/* Consistent icon size */}
                     <span className="font-medium text-gray-700">{ecommerceService.name}</span>
                   </div>
                 </Link>
