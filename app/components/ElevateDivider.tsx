@@ -51,7 +51,7 @@ function ElevateDivider() {
   return (
     <section className="elevate-section overflow-hidden py-8">
       <div 
-        className="elevate-wrapper whitespace-nowrap text-8xl font-bold text-black"
+        className="elevate-wrapper whitespace-nowrap text-8xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black"
         ref={wrapperRef}
         style={{ display: 'flex', willChange: 'transform' }}
       >

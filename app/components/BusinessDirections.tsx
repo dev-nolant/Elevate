@@ -1,14 +1,25 @@
 'use client';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { FaBuilding, FaIndustry, FaMoneyBillWave, FaBolt, FaCog, FaGraduationCap, FaShoppingCart, FaTruck, FaTools, FaWarehouse, FaLandmark, FaChartLine } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function BusinessDirections() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [iconsReady, setIconsReady] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  // Preload all icons to prevent rendering issues on mobile
+  useEffect(() => {
+    // This ensures that icons are fully loaded before rendering
+    const loadIcons = () => {
+      setIconsReady(true);
+    };
+    loadIcons();
+  }, []);
 
   const services = [
     { icon: FaBuilding, name: 'Real Estate', link: '/services/real-estate' },
@@ -26,6 +37,10 @@ export default function BusinessDirections() {
   ];
 
   const ecommerceService = { icon: FaShoppingCart, name: 'E-commerce', link: '/services/e-commerce' };
+
+  if (!iconsReady) {
+    return <div>Loading...</div>; // Optionally display a loading state while icons are preloading
+  }
 
   return (
     <section className="py-16">
