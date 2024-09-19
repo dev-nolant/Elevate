@@ -62,7 +62,7 @@ export default function BusinessDirections() {
                   <Link href={service.link} key={service.name} className="group">
                     <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
                       <Icon className="w-8 h-8 text-black mr-3 flex-shrink-0" /> {/* Ensure icon size and non-shrink */}
-                      <span className="font-medium text-gray-700">{service.name}</span>
+                      <span className="font-medium text-gray-700 text-sm md:text-base break-words leading-tight">{service.name}</span> {/* Dynamic text size */}
                     </div>
                   </Link>
                 );
@@ -89,7 +89,7 @@ export default function BusinessDirections() {
                     <Link href={service.link} key={service.name} className="group">
                       <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
                         <Icon className="w-8 h-8 text-black mr-3 flex-shrink-0" /> {/* Ensure icon size and non-shrink */}
-                        <span className="font-medium text-gray-700">{service.name}</span>
+                        <span className="font-medium text-gray-700 text-sm md:text-base break-words leading-tight">{service.name}</span> {/* Dynamic text size */}
                       </div>
                     </Link>
                   );
@@ -99,7 +99,7 @@ export default function BusinessDirections() {
                 <Link href={ecommerceService.link} className="group">
                   <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
                     <ecommerceService.icon className="w-8 h-8 text-black mr-3 flex-shrink-0" /> {/* Ensure icon size and non-shrink */}
-                    <span className="font-medium text-gray-700">{ecommerceService.name}</span>
+                    <span className="font-medium text-gray-700 text-sm md:text-base break-words leading-tight">{ecommerceService.name}</span>
                   </div>
                 </Link>
               </div>
