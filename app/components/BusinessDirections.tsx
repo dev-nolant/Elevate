@@ -61,7 +61,7 @@ export default function BusinessDirections() {
                 return (
                   <Link href={service.link} key={service.name} className="group">
                     <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
-                      <Icon className="w-8 h-8 text-black mr-3" /> {/* Increased icon size */}
+                      <Icon className="w-8 h-8 text-black mr-3 flex-shrink-0" /> {/* Ensure icon size and non-shrink */}
                       <span className="font-medium text-gray-700">{service.name}</span>
                     </div>
                   </Link>
@@ -88,7 +88,7 @@ export default function BusinessDirections() {
                   return (
                     <Link href={service.link} key={service.name} className="group">
                       <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
-                        <Icon className="w-8 h-8 text-black mr-3" /> {/* Consistent icon size */}
+                        <Icon className="w-8 h-8 text-black mr-3 flex-shrink-0" /> {/* Ensure icon size and non-shrink */}
                         <span className="font-medium text-gray-700">{service.name}</span>
                       </div>
                     </Link>
@@ -98,7 +98,7 @@ export default function BusinessDirections() {
               <div className="mt-6 flex justify-center">
                 <Link href={ecommerceService.link} className="group">
                   <div className="flex items-center p-4 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm">
-                    <ecommerceService.icon className="w-8 h-8 text-black mr-3" /> {/* Consistent icon size */}
+                    <ecommerceService.icon className="w-8 h-8 text-black mr-3 flex-shrink-0" /> {/* Ensure icon size and non-shrink */}
                     <span className="font-medium text-gray-700">{ecommerceService.name}</span>
                   </div>
                 </Link>
