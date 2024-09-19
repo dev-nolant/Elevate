@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
@@ -11,6 +11,20 @@ interface HeaderProps {
 
 export default function Header({ isDarkMode = true }: HeaderProps) {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    // Disable body scroll when the menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        // Clean up to ensure scrolling is restored when component unmounts
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [menuOpen]);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);

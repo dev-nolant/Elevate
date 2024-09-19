@@ -25,7 +25,7 @@ const services = [
 export default function ServicesDashboard() {
     return (
         <div className="min-h-screen mt-2">
-            <Header  isDarkMode={false} />
+            <Header isDarkMode={false} />
 
             <div className="max-w-6xl mx-auto p-8">
                 <h1 className="text-4xl font-semibold mb-10 text-center">Our Services</h1>
@@ -34,7 +34,8 @@ export default function ServicesDashboard() {
                         <Link href={service.link} key={service.name} className="group">
                             <div className="flex flex-col items-center justify-center p-6 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm h-40 w-full">
                                 <service.icon className="w-10 h-10 text-black mb-2" />
-                                <span className="text-xl font-semibold text-gray-700">{service.name}</span>
+                                {/* Wrapping and center-aligning long text */}
+                                <span className="text-xl font-semibold text-center text-gray-700">{service.name}</span>
                                 <span className="text-sm text-gray-500">Learn More</span>
                             </div>
                         </Link>

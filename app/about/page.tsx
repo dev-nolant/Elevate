@@ -56,6 +56,7 @@ export default function About() {
           max-width: 90%; /* Limit the paragraph width */
         }
       `}</style>
+      <Footer />
     </div>
   );
 }
