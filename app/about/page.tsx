@@ -28,7 +28,7 @@ export default function About() {
       <Header />
 
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-start justify-center text-left h-full px-6 overflow-y-auto">
+      <main className="relative z-10 flex flex-col items-start justify-center text-left h-full px-6 overflow-y-auto pb-5">
         <div className="text-white max-w-3xl select-none z-0">
           <h1 className="text-4xl md:text-6xl font-sans leading-tight">
             About Us
