@@ -113,12 +113,12 @@ export default function Header({ isDarkMode = true }: HeaderProps) {
                 </nav>
                 <div className="flex space-x-2 mt-4 w-full max-w-xs ">
                     <Link legacyBehavior href="/login">
-                        <a className={`w-1/2 text-center px-4 py-2 border ${isDarkMode ? 'border-white' : 'border-black'} rounded-md`}>
+                        <a className={`w-1/2 text-center px-4 py-2 border ${isDarkMode ? 'border-white' : 'border-black'} rounded-md hidden`}>
                             Login
                         </a>
                     </Link>
                     <Link legacyBehavior href="/register">
-                        <a className={`w-1/2 text-center px-4 py-2 ${isDarkMode ? 'bg-white text-black' : 'bg-black text-white'} rounded-md`}>
+                        <a className={`w-1/2 text-center px-4 py-2 ${isDarkMode ? 'bg-white text-black' : 'bg-black text-white'} rounded-md hidden`}>
                             Register
                         </a>
                     </Link>
